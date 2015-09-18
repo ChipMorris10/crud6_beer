@@ -32,9 +32,12 @@ router.post('/beers', function (req, res, next) {
         .done();
 });
 
+// ***************************************//
+// PROBLEMS WITH PUT               //
+// **************************************//
 // ** PUT (Update) SINGLE beer ** //
 router.put('/beer/:id', function (req, res, next) {
-    Vegetarian.findByIdAndUpdateQ(req.params.id, req.body)
+    Beer.findByIdAndUpdateQ(req.params.id, req.body)
         .then(function(result){res.json(result)})
         .fail(function(err){res.send(err)})
         .done();
